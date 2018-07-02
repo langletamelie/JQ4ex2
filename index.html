@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Exercice 2</title>
+</head>
+<body>
+  <div>Entrer les 5 dernières notes : </div>
+  <form action="#" method="post">
+    <ul>
+      <li>
+        <label for="note1">Note 1 : </label><input type="text" name="note1" id="note1" />
+      </li>
+      <li>
+        <label for="note2">Note 2 : </label><input type="text" name="note2" id="note2" />
+      </li>
+      <li>
+        <label for="note3">Note 3 : </label><input type="text" name="note3" id="note3" />
+      </li>
+      <li>
+        <label for="note4">Note 4 : </label><input type="text" name="note4" id="note4" />
+      </li>
+      <li>
+        <label for="note5">Note 5 : </label><input type="text" name="note5" id="note5" />
+      </li>
+    </ul>
+  </form>
+  <div id="average"></div>
+  <button type="button" name="button" id="button">Valider</button>
+  <script src="jquery-3.2.1.js"></script>
+  <script>
+  $('#button').click(function(){
+    //déclaration des variables pour la récupération des notes
+    var note1 = parseInt($('#note1').val());
+    var note2 = parseInt($('#note2').val());
+    var note3 = parseInt($('#note3').val());
+    var note4 = parseInt($('#note4').val());
+    var note5 = parseInt($('#note5').val());
+    //variable représentant le calcul de la moyenne
+    var average = (note1 + note2 + note3 + note4 + note5)/5;
+    //condition permettant l'affichage de la moyenne et de l'appréciation
+      if (average >= 0 && average <10){
+        alert (average + ' En dessous de la moyenne');
+      }else if (average >= 10 && average < 13){
+        alert (average + ' Moyen');
+      }else if (average >= 13 && average < 16){
+        alert (average + ' Bien');
+      }else if (average >= 16 && average <20){
+        alert (average + ' Très bien');
+      }else if (average == 20){
+        alert (average + ' Excellent');
+      }
+  });
+</script>
+</body>
+</html>
